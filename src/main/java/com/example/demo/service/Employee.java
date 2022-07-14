@@ -13,6 +13,6 @@ public class Employee {
     private String name;
     private String email;
     private int phno;
-//    List<Project> projects;
+    List<Project> projects;
 
 }

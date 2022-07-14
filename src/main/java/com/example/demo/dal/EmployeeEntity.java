@@ -19,8 +19,9 @@ public class EmployeeEntity {
 	private String name;
 	private String email;
 	private int phno;
-//	@OneToMany(cascade = CascadeType.ALL)
-//	@JoinColumn(referencedColumnName = "id")
-//	private List<ProjectEntity> projects;
+
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(referencedColumnName = "id")
+	private List<ProjectEntity> projects;
 
 }

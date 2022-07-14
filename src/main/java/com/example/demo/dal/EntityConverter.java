@@ -10,23 +10,23 @@ public class EntityConverter {
     public static Employee EmployeeEntityToEmployee(EmployeeEntity employeeEntity){
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeEntity,employee);
-//        employee.setProjects(
-//                employeeEntity.getProjects()
-//                        .stream()
-//                        .map(EntityConverter::ProjectEntityToProject)
-//                        .collect(Collectors.toList())
-//        );
+        employee.setProjects(
+                employeeEntity.getProjects()
+                        .stream()
+                        .map(EntityConverter::ProjectEntityToProject)
+                        .collect(Collectors.toList())
+        );
         return employee;
     }
     public static EmployeeEntity EmployeeToEmployeeEntity(Employee employee){
         EmployeeEntity employeeEntity = new EmployeeEntity();
         BeanUtils.copyProperties(employee,employeeEntity);
-//        employeeEntity.setProjects(
-//                employee.getProjects()
-//                        .stream()
-//                        .map(EntityConverter::ProjectToProjectEntity)
-//                        .collect(Collectors.toList())
-//        );
+        employeeEntity.setProjects(
+                employee.getProjects()
+                        .stream()
+                        .map(EntityConverter::ProjectToProjectEntity)
+                        .collect(Collectors.toList())
+        );
         return employeeEntity;
     }
     public static ProjectEntity ProjectToProjectEntity(Project project){
